@@ -14,4 +14,4 @@ Un microservicio backend robusto diseñado para la ingesta, validación y almace
 
 * [Java Development Kit (JDK) 17](https://adoptium.net/) o superior.
 * [Maven](https://maven.apache.org/) (o usar el wrapper incluido `./mvnw`).
-* [Docker](https://www.docker.com/) y Docker Compose.
+* [Docker](https://www.docker.com/) 
