@@ -4,6 +4,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import jakarta.validation.Valid;
 
 
 @RestController
@@ -16,7 +17,7 @@ public class LogEntryController {
     }
 
     @PostMapping
-    public ResponseEntity<?> createLog(@RequestBody LogRecord logRecord){
+    public ResponseEntity<?> createLog(@Valid @RequestBody LogRecord logRecord){
         try {
             LogRecord saveLog = service.saveLog(logRecord);
             return new ResponseEntity<>(saveLog, HttpStatus.CREATED);

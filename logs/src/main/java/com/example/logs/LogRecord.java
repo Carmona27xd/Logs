@@ -1,6 +1,8 @@
 package com.example.logs;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+
 import java.time.LocalDateTime;
 
 @Entity
@@ -10,12 +12,15 @@ public class LogRecord {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "El campo 'sourceSystem' es obligatorio")
     @Column(name = "source_system", nullable = false)
     private String sourceSystem;
 
+    @NotBlank(message = "El campo 'message' es obligatorio")
     @Column(columnDefinition = "TEXT", nullable = false)
     private String message;
 
+    @NotBlank(message = "El campo 'level' es obligatorio")
     @Column(nullable = false)
     private String level;
 
